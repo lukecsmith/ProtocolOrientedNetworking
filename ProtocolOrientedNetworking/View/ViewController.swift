@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     
     func testCall() {
         do {
-            //url request is created by the Router enum
+            //url request is created by the Router enum (including the headers etc)
             var urlRequest = try Router.testCall.asURLRequest()
             
             //any JSON for eg that we might want to attach to the call is

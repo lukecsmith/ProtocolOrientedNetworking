@@ -47,20 +47,20 @@ extension Fetchable where Self: Unboxable {
                     onSuccess(.asSelf(mapped))
                 } catch {
                     do {
-                        //try to create a Dictionary from the downloaded data
+                        //try to create a Dictionary of Self objects from the downloaded data
                         let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: [String: Any]]
                         var mappedDictionary = [String: Self]()
                         try json?.forEach { key, value in
                             let data: Self = try unbox(dictionary: value)
                             mappedDictionary[key] = data
                         }
-                        //creating dictionary worked, so pass it back via success completion closure
+                        //creating dictionary of Self objects worked, so pass it back via success completion closure
                         onSuccess(.asDictionary(mappedDictionary))
                     } catch {
                         do {
-                            //try to create an Array from the downloaded data
+                            //try to create an Array of Self objects from the downloaded data
                             let mapped: [Self] = try unbox(data: data)
-                            //creating array worked, so pass it back via success completion closure
+                            //creating array of Self objects worked, so pass it back via success completion closure
                             onSuccess(.asArray(mapped))
                         } catch {
                             //all that failed, so return the raw data
