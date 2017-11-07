@@ -53,6 +53,7 @@ class ViewController: UIViewController {
         }
     }
     
+    //convert some JSON into data, to attach to the call
     func createTestHTTPBody() -> Data? {
         let bodyString1 = "testString1"
         let bodyString2 = "testString2"
