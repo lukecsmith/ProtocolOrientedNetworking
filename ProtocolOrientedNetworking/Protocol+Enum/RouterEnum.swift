@@ -11,9 +11,9 @@ import Alamofire
 
 enum Router: URLRequestConvertible {
     
-    static let baseURLString = "https://dev.tickets.dubaid.co.uk/api/"
+    static let baseURLString = "https://yourwebserverURL.com/api/etc/"
     
-    case loginUser
+    case testCall
     case getUserInfo
     /*
     case get(Int)
@@ -24,7 +24,7 @@ enum Router: URLRequestConvertible {
     func asURLRequest() throws -> URLRequest {
         var method: HTTPMethod {
             switch self {
-            case .loginUser:
+            case .testCall:
                 return .post
             case .getUserInfo:
                 return .get
@@ -37,7 +37,7 @@ enum Router: URLRequestConvertible {
         }
         let params: ([String: Any]?) = {
             switch self {
-            case .loginUser:
+            case .testCall:
                 return nil
             case .getUserInfo:
                 return nil
@@ -47,7 +47,7 @@ enum Router: URLRequestConvertible {
             // build up and return the URL for each endpoint
             let relativePath: String?
             switch self {
-            case .loginUser:
+            case .testCall:
                 relativePath = "user"
             case .getUserInfo:
                 relativePath = "oauth/token"
