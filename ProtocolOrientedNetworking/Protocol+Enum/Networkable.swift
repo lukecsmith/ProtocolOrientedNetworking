@@ -1,5 +1,5 @@
 //
-//  Fetchable.swift
+//  Networkable.swift
 //  DubAidAdmin
 //
 //  Created by Luke Smith on 12/10/2017.
@@ -21,16 +21,16 @@ typealias ErrorHandler = (Error) -> Void
 typealias SuccessHandler<T> = (MappingResult<T>) -> Void where T: Unboxable
 
 /*
- Fetchable is a protocol that allows any (data model) object to become one that can fetch contents from a web server, by calling the function defined below on itself, fetch(), with the given parameters.  If the call is succesful the model object becomes populated with the results from the service.  Alamofire is used for the calls, and Unbox is used to decode the JSON.
+ Networkable is a protocol that allows any object (also conforming to Unboxable) to become one that can call a web server, by using the function defined below, with the given parameters.  If the call is succesful the model object becomes populated with the results from the service.  Alamofire is used for the calls, and Unbox is used to decode the JSON.
  */
-protocol Fetchable {}
+protocol Networkable {}
 
 /*
  Using a protocol extension allows us to fully define the fetch function here, rather than requiring each conforming object to define it.
  */
-extension Fetchable where Self: Unboxable {
+extension Networkable where Self: Unboxable {
     
-    static func fetch(with request: URLRequestConvertible, onSuccess: @escaping SuccessHandler<Self>, onError: @escaping ErrorHandler) {
+    static func call(with request: URLRequestConvertible, onSuccess: @escaping SuccessHandler<Self>, onError: @escaping ErrorHandler) {
         
         Alamofire.request(request).responseJSON { response in
             if let errorData = response.result.error {

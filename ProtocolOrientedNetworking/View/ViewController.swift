@@ -39,8 +39,8 @@ class ViewController: UIViewController {
             urlRequest.httpBody = self.createTestHTTPBody()
             
             //the call is done by calling fetch on the UserData model object, which is made
-            //possible by conforming UserData to the Fetchable protocol (and Unboxable too)
-            let _ = UserData.fetch(with: urlRequest, onSuccess: { result in
+            //possible by conforming UserData to the Networkable protocol (and Unboxable too)
+            UserData.call(with: urlRequest, onSuccess: { result in
                 //handle call success
                 print("*** Succesfully fetched user data, \(result)")
             }, onError: { error in

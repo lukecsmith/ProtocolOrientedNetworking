@@ -12,7 +12,7 @@
 		077339DE1FB195D0002E9980 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 077339DC1FB195D0002E9980 /* Main.storyboard */; };
 		077339E01FB195D0002E9980 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 077339DF1FB195D0002E9980 /* Assets.xcassets */; };
 		077339E31FB195D0002E9980 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 077339E11FB195D0002E9980 /* LaunchScreen.storyboard */; };
-		077339F01FB196A4002E9980 /* Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077339ED1FB196A4002E9980 /* Fetchable.swift */; };
+		077339F01FB196A4002E9980 /* Networkable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077339ED1FB196A4002E9980 /* Networkable.swift */; };
 		077339F11FB196A4002E9980 /* Printable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077339EE1FB196A4002E9980 /* Printable.swift */; };
 		077339F21FB196A4002E9980 /* RouterEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077339EF1FB196A4002E9980 /* RouterEnum.swift */; };
 		077339F41FB19C7C002E9980 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077339F31FB19C7C002E9980 /* UserData.swift */; };
@@ -27,7 +27,7 @@
 		077339DF1FB195D0002E9980 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		077339E21FB195D0002E9980 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		077339E41FB195D0002E9980 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		077339ED1FB196A4002E9980 /* Fetchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetchable.swift; sourceTree = "<group>"; };
+		077339ED1FB196A4002E9980 /* Networkable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networkable.swift; sourceTree = "<group>"; };
 		077339EE1FB196A4002E9980 /* Printable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Printable.swift; sourceTree = "<group>"; };
 		077339EF1FB196A4002E9980 /* RouterEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterEnum.swift; sourceTree = "<group>"; };
 		077339F31FB19C7C002E9980 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 		077339EC1FB19638002E9980 /* Protocol+Enum */ = {
 			isa = PBXGroup;
 			children = (
-				077339ED1FB196A4002E9980 /* Fetchable.swift */,
+				077339ED1FB196A4002E9980 /* Networkable.swift */,
 				077339EE1FB196A4002E9980 /* Printable.swift */,
 				077339EF1FB196A4002E9980 /* RouterEnum.swift */,
 			);
@@ -256,7 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				077339F41FB19C7C002E9980 /* UserData.swift in Sources */,
-				077339F01FB196A4002E9980 /* Fetchable.swift in Sources */,
+				077339F01FB196A4002E9980 /* Networkable.swift in Sources */,
 				077339DB1FB195D0002E9980 /* ViewController.swift in Sources */,
 				077339F21FB196A4002E9980 /* RouterEnum.swift in Sources */,
 				077339D91FB195D0002E9980 /* AppDelegate.swift in Sources */,

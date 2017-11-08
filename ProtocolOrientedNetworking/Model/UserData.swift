@@ -10,9 +10,9 @@ import Foundation
 import Unbox
 
 /*
- Conforming this object to the Fetchable protocol allows the object to do the 'fetch' call specified in that protocol.  We then conform to Unboxable to allow the results of that call to be parsed and converted into objects of this type.  Printable simply allows us to log out the contents.
+ Conforming this object to the Networkable protocol allows the object to do the 'fetch' call specified in that protocol.  We then conform to Unboxable to allow the results of that call to be parsed and converted into objects of this type.  Printable simply allows us to log out the contents.
  */
-struct UserData : Fetchable, Unboxable, Printable {
+struct UserData : Networkable, Unboxable, Printable {
     
     var user_name : String
     var user_phone : String
