@@ -38,9 +38,8 @@ class ViewController: UIViewController {
             //created by the createTestHTTPBody function
             urlRequest.httpBody = self.createTestHTTPBody()
             
-            //the call is done by calling fetch on the UserData model object, which is made
-            //possible by conforming UserData to the Networkable protocol (and Unboxable too)
-            UserData.call(with: urlRequest, onSuccess: { result in
+            //the use of the call function is made possible by conforming UserData to the Networkable protocol (and Unboxable too)
+            UserData.call(with: urlRequest, onSuccess: { result in //result is of type MappingResult
                 switch result {
                 case .asSelf(let userData):
                     userData.printContents()
