@@ -41,10 +41,17 @@ class ViewController: UIViewController {
             //the call is done by calling fetch on the UserData model object, which is made
             //possible by conforming UserData to the Networkable protocol (and Unboxable too)
             UserData.call(with: urlRequest, onSuccess: { result in
-                //handle call success
-                print("*** Succesfully fetched user data, \(result)")
+                switch result {
+                case .asSelf(let userData):
+                    userData.printContents()
+                case .asDictionary(let userDataDict):
+                    print("Dictionary of UserData's : \(userDataDict)")
+                case .asArray(let userDataArray):
+                    print("Array of UserData's : \(userDataArray)")
+                case .raw(let rawData):
+                    print("Raw Data back : \(rawData)")
+                }
             }, onError: { error in
-                //handle call failure (call went - but server returned an error)
                 print("Failed the test call, \(error.localizedDescription)")
             })
         } catch {

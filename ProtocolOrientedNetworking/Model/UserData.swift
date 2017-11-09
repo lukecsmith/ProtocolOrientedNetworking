@@ -19,6 +19,7 @@ struct UserData : Networkable, Unboxable, Printable {
     var user_address1 : String
     var user_address2 : String
     
+    //Conforming to Unboxable means we have to implement this init method.  It allows the json parser 'Unbox' to create objects of this type (Self)
     init(unboxer: Unboxer) throws {
         user_name = try unboxer.unbox(key: "user_name")
         user_phone = try unboxer.unbox(key: "user_phone")
@@ -26,6 +27,7 @@ struct UserData : Networkable, Unboxable, Printable {
         user_address2 = try unboxer.unbox(key: "user_address2")
     }
     
+    //printable protocol requires us to implement this method :
     func printContents() {
         print("User Name : \(user_name)")
         print("User Phone : \(user_phone)")
