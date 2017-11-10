@@ -13,33 +13,26 @@ enum Router: URLRequestConvertible {
     
     static let baseURLString = "https://yourwebserverURL.com/api/etc/"
     
-    case testCall
-    case getUserInfo
-    /*
-    case get(Int)
-    case create([String: Any])
-    case delete(Int)
-    */
+    case generalPost([String: Any])
+    case getUserData(Int)
+    case deleteSomething(Int)
     
     func asURLRequest() throws -> URLRequest {
         var method: HTTPMethod {
             switch self {
-            case .testCall:
+            case .generalPost:
                 return .post
-            case .getUserInfo:
+            case .getUserData:
                 return .get
-            
-            //case .create:
-            //    return .post
-            //case .delete:
-            //    return .delete
+            case .deleteSomething:
+                return .delete
             }
         }
         let params: ([String: Any]?) = {
             switch self {
-            case .testCall:
-                return nil
-            case .getUserInfo:
+            case .generalPost(let dict):
+                return dict
+            case .getUserData, .deleteSomething:
                 return nil
             }
         }()
@@ -47,18 +40,12 @@ enum Router: URLRequestConvertible {
             // build up and return the URL for each endpoint
             let relativePath: String?
             switch self {
-            case .testCall:
-                relativePath = "user"
-            case .getUserInfo:
-                relativePath = "oauth/token"
-            /*
-            case .get(let number):
-                relativePath = "path/\(number)"
-            case .create:
-                relativePath = "path"
-            case .delete(let number):
-                relativePath = "path/\(number)"
-            */
+            case .generalPost:
+                relativePath = "generalPostPath"
+            case .getUserData(let pathNumber):
+                relativePath = "getUserDataPath/\(pathNumber)"
+            case .deleteSomething(let pathNumber):
+                relativePath = "deleteSomethingPath/\(pathNumber)"
             }
             
             var url = URL(string: Router.baseURLString)!
