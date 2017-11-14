@@ -8,6 +8,7 @@
 
 import Foundation
 
+//simple protocol requiring an object to implement the 'printContents' function, to log out contents
 protocol Printable {
     func printContents()
 }

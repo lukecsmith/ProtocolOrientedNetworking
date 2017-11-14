@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 
+//this enum creates URLRequests for given cases, for use in network calls.
 enum Router: URLRequestConvertible {
     
     static let baseURLString = "https://yourwebserverURL.com/api/etc/"

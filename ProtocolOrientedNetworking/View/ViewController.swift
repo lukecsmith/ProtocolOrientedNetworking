@@ -34,8 +34,7 @@ class ViewController: UIViewController {
             //url request is created by the Router enum (including the headers etc)
             var urlRequest = try Router.getUserData(0).asURLRequest()
             
-            //any JSON for eg that we might want to attach to the call is
-            //created by the createTestHTTPBody function
+            //any JSON for eg that we might want to attach to the call is created by the createTestHTTPBody function
             urlRequest.httpBody = self.createTestHTTPBody()
             
             //the use of the call function is made possible by conforming UserData to the Networkable protocol (and Unboxable too)
@@ -59,7 +58,7 @@ class ViewController: UIViewController {
         }
     }
     
-    //convert some JSON into data, to attach to the call
+    //convert some JSON into data, to send with the call
     func createTestHTTPBody() -> Data? {
         let bodyString1 = "testString1"
         let bodyString2 = "testString2"
